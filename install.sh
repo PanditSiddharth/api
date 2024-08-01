@@ -130,6 +130,8 @@ mkdir -p ~/compiler
 cd ~/compiler
 npm init -y
 npm install iocompiler
+
+echo -e " "
 if [ $? -eq 0 ]; then
   echo -e "${GREEN}Compiler directory created and project set up successfully${NC}"
 else
@@ -143,6 +145,7 @@ read -p "Please enter your Telegram bot token: " bot_token
 read -p "Please enter allowed Telegram user IDs (comma-separated): " user_ids
 
 # Generate the bot script
+echo -e " "
 echo -e "${YELLOW}Generating bot script...${NC}"
 cat > index.js <<EOL
 const { compiler } = require('iocompiler');
@@ -164,4 +167,5 @@ sleep 1
 
 # Completion message
 echo -e "${CYAN}IO Compiler installation process is done.${NC}"
+echo -e " "
 echo -e "${CYAN}Thank you for using our installer${NC}"

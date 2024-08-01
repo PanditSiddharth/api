@@ -17,6 +17,10 @@ prompt_yes_no() {
     esac
   done
 }
+
+echo -e "${CYAN}Welcome to the IO Compiler Installation Script ${NC}"
+echo -e "${CYAN}Let's get started...${NC}"
+sleep 2
 pkg updated
 
 clear
@@ -34,7 +38,7 @@ sleep 3
 
 # Check if Node.js is installed
 if command -v node > /dev/null 2>&1; then
-    echo "${GREEN}Node.js is already installed. Version: $(node -v)${NC}"
+    echo -e "${GREEN}Node.js is already installed. Version: $(node -v)${NC}"
 else
     # Install Node.js
     echo -e "${YELLOW}Installing Node.js...${NC}"
@@ -50,7 +54,7 @@ fi
 
 # Check if python is installed
 if command -v python > /dev/null 2>&1; then
-    echo "${GREEN}Python is already installed. Version: $(python --version)${NC}"
+    echo -e "${GREEN}Python is already installed. Version: $(python --version)${NC}"
 else
    # Prompt for Python3 installation
     if prompt_yes_no "Do you want to install Python3?"; then
@@ -69,7 +73,7 @@ fi
 
 # Check if Java is installed
 if command -v java > /dev/null 2>&1; then
-    echo "${GREEN}Java is already installed. Version: $(java --version)${NC}"
+    echo -e "${GREEN}Java is already installed. Version: $(java --version)${NC}"
 else
   # Prompt for Java installation
   if prompt_yes_no "Do you want to install Java for Termux?"; then
@@ -88,7 +92,7 @@ fi
 
 # Check if Go is installed
 if command -v go > /dev/null 2>&1; then
-    echo "${GREEN}Go is already installed. Version: $(go version)${NC}"
+    echo -e "${GREEN}Go is already installed. Version: $(go version)${NC}"
 else
   # Prompt for Go installation
   if prompt_yes_no "Do you want to install Go?"; then

@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
   });
 
 // Serve the install.sh file at the specified URL
-app.get('/iocompiler/termux', (req, res) => {
+app.get('/iocompiler/termux.sh', (req, res) => {
   res.sendFile(path.join(__dirname, 'install.sh'));
 });
 

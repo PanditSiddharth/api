@@ -78,7 +78,7 @@ else
   # Prompt for Java installation
   if prompt_yes_no "Do you want to install Java for Termux?"; then
     echo -e "${YELLOW}Installing Java...${NC}"
-    pkg install openjdk-20 -y
+    pkg install openjdk-17 -y
     if [ $? -eq 0 ]; then
       echo -e "${GREEN}Java installed successfully${NC}"
     else

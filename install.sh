@@ -71,6 +71,26 @@ else
     sleep 1
 fi
 
+# Check if rust is installed
+if command -v rustc > /dev/null 2>&1; then
+    echo -e "${GREEN}Rust is already installed. Version: $(rustc --version)${NC}"
+else
+   # Prompt for Rust installation
+    if prompt_yes_no "Do you want to install Rust?"; then
+        echo -e "${YELLOW}Installing Rust...${NC}"
+        pkg install rust -y
+        if [ $? -eq 0 ]; then
+            echo -e "${GREEN}Rust installed successfully${NC}"
+        else
+            echo -e "${RED}Failed to install Rust.${NC}"
+        fi
+    else
+        echo -e "${CYAN}Skipping Rust installation.${NC}"
+    fi
+    sleep 1
+fi
+
+
 # Check if Java is installed
 if command -v java > /dev/null 2>&1; then
     echo -e "${GREEN}Java is already installed. Version: $(java --version)${NC}"
